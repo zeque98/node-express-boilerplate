@@ -1,17 +1,16 @@
 {
-  "name": "create-nodejs-express-app",
-  "version": "1.7.0",
-  "description": "Create a Node.js app for building production-ready RESTful APIs using Express, by running one command",
+  "name": "portal-proveedores-backend",
+  "version": "1.0.0",
+  "description": "Backend for the portal proveedores app",
   "bin": "bin/createNodejsApp.js",
   "main": "src/index.js",
   "repository": "https://github.com/hagopj13/node-express-boilerplate.git",
-  "author": "Hagop Jamkojian <hagopj13@gmail.com>",
-  "license": "MIT",
+  "author": "Ezequiel Martinez",
   "engines": {
     "node": ">=12.0.0"
   },
   "scripts": {
-    "start": "pm2 start ecosystem.config.json --no-daemon",
+    "start": "NODE_ENV=production node src/index.js",
     "dev": "cross-env NODE_ENV=development nodemon src/index.js",
     "test": "jest -i --colors --verbose --detectOpenHandles",
     "test:watch": "jest -i --watchAll",
@@ -21,9 +20,6 @@
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check **/*.js",
     "prettier:fix": "prettier --write **/*.js",
-    "docker:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
-    "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up",
-    "docker:test": "docker-compose -f docker-compose.yml -f docker-compose.test.yml up",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -45,9 +41,6 @@
     "nodemailer": "^6.9.1",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1",
-    "pm2": "^5.2.2",
-    "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^4.6.0",
     "validator": "^13.9.0",
     "winston": "^3.8.2",
     "xss-clean": "^0.1.1"
@@ -68,6 +61,8 @@
     "node-mocks-http": "^1.12.1",
     "nodemon": "^2.0.20",
     "prettier": "^2.8.3",
-    "supertest": "^6.3.3"
+    "supertest": "^6.3.3",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.0"
   }
 }
